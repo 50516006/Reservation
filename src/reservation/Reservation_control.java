@@ -61,7 +61,7 @@ public class Reservation_control {
 		return res;
 	}
 	public String getFdata( String facility){
-System.out.println("1");
+
 		String res = null;
 		try {
 		
@@ -240,6 +240,36 @@ System.out.println("1");
 			return true;
 		}
 		return false;
+	}
+	public String getDats() {
+		// TODO 自動生成されたメソッド・スタブ	
+		String res = "";
+
+
+
+		// MySQLの操作(SELECT文の実行)
+		try {
+			// クエリーを実行して結果セットを取得
+			ResultSet rs = mysql.selectReservation2(reservation_userid); // 検索結果から予約状況を作成
+				boolean exist = false;
+				while(rs.next()){
+					String start = rs.getString("start_time");
+					String end = rs.getString("end_time");
+					String date =rs.getString("date");
+					String fn =rs.getString("facility_name");
+					res += date+""+" " + start + " -- " + end +"   "+fn+ "\n";
+					exist = true;
+				}
+
+				if ( !exist){ //予約が1つも存在しない場合の処理
+					res = "予約はありません";
+				}
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			return res;
+		
+
 	}
 
 

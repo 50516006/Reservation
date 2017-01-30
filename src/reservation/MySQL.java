@@ -101,9 +101,21 @@ public class MySQL {
 		rs=null;
 		
 		String sql = "SELECT * FROM facility WHERE facility_name = '"+ facility +"';";
-		System.out.println("2");
+
 		try {
 			rs = stmt.executeQuery(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rs;
+	}
+
+	public ResultSet selectReservation2(String reservation_userid) {
+		String sql = "SELECT * FROM reservation WHERE user_id ='" + reservation_userid + "' ORDER BY date;";
+		ResultSet rs = null;
+		try {
+			rs = stmt.executeQuery (sql);  //try catchで囲む
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

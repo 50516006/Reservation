@@ -184,6 +184,9 @@ TextArea textMessage;	// 結果表示用メッセージ欄
 		else if (e.getSource() == buttonExplanation){
 			result = rcontrol.getFdata(choiceFacility.getSelectedItem());
 		}
+		else if (e.getSource() == buttonConfirm){
+			result = rcontrol.getDats();
+		}
 
 		textMessage.setText(result);
 	}
