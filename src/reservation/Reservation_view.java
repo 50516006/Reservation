@@ -187,7 +187,10 @@ TextArea textMessage;	// 結果表示用メッセージ欄
 		else if (e.getSource() == buttonConfirm){
 			result = rcontrol.getDats();
 		}
+		else if (e.getSource() == buttonCancel){
+			result = rcontrol.getDel();
 
+		}
 		textMessage.setText(result);
 	}
 

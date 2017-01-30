@@ -271,6 +271,28 @@ public class Reservation_control {
 		
 
 	}
+	public String getDel() {
+		// TODO 自動生成されたメソッド・スタブ
+		String res = "";
+
+
+
+		// MySQLの操作(SELECT文の実行)
+		try {
+			// クエリーを実行して結果セットを取得
+			int rs = mysql.selectReservation3(reservation_userid); // 検索結果から予約状況を作成
+				boolean exist = false;
+			
+
+			
+
+
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+
+		return "消えました";
+	}
 
 
 

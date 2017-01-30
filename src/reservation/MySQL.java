@@ -122,4 +122,16 @@ public class MySQL {
 		}
 		return rs;
 	}
+
+public int selectReservation3(String reservation_userid) {
+	String sql = "DELETE  FROM reservation WHERE user_id ='" + reservation_userid + "';";
+	int rs =0;
+	try {
+		 rs=stmt.executeUpdate(sql);  //try catchで囲む
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		  System.out.println("SQLException:" + e.getMessage());
+	}
+	return rs;
+}
 }
