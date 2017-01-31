@@ -92,6 +92,7 @@ public class Reservation_control {
 		String res = "";
 		// 年月日が数字かどうかををチェックする処理
 		try {
+
 			int ryear = Integer.parseInt( ryear_str);
 			int rmonth = Integer.parseInt( rmonth_str);
 			int rday = Integer.parseInt( rday_str);
@@ -245,7 +246,8 @@ public class Reservation_control {
 		// TODO 自動生成されたメソッド・スタブ	
 		String res = "";
 
-
+if(flagLogin == false)
+	return "ログインして";
 
 		// MySQLの操作(SELECT文の実行)
 		try {
@@ -274,6 +276,8 @@ public class Reservation_control {
 	public String getDel() {
 		// TODO 自動生成されたメソッド・スタブ
 		String res = "";
+		if(flagLogin == false)
+			return "ログインして";
 
 
 
