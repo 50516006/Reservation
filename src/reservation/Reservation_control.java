@@ -66,7 +66,7 @@ public class Reservation_control {
 		try {
 		
 			// クエリーを実行して結果セットを取得
-			ResultSet rs = mysql.getEx( facility); // 検索結果から予約状況を作成
+			ResultSet rs = mysql.getEx( facility); 
 				boolean exist = false;
 				while(rs.next()){
 
@@ -280,7 +280,7 @@ public class Reservation_control {
 		// MySQLの操作(SELECT文の実行)
 		try {
 			// クエリーを実行して結果セットを取得
-			int rs = mysql.selectReservation3(reservation_userid); // 検索結果から予約状況を作成
+			int rs = mysql.selectReservation3(reservation_userid); 
 				boolean exist = false;
 			
 
